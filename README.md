@@ -17,13 +17,16 @@ Inputs are formatted as chat conversations, allowing the model to learn how to i
 ### Findings and insights
 - **1. The base model struggles with Lithuanian language in general.** For the input "Paaiskink zodi sniegas tekste: Šiandien užvežė sniego." the output was "Šiauikiuose sniegiuose.", which doesn't make sense. It would be good to find a free LLM, that supports Lithuanian language better, otherwise, extremely extensive training is required
 - **2. The model performance generally was not strong after fine-tuning.** Although after increasing the number of epochs to 50 the model was able to generate coherent explanations, it simply memorised the answers and struggled with unseen options. Below are some input and output examples:
+  
 a) *Input: Paaiškink žodi zaprietkė tekste: Visa zona zaprietkėm aptverta
 Output: zaprietkė - narkotinės pagirios: organizmo būsena pasibaigus narkotiko veikimui, neigiamos fiziologinės reakcijos, negalavimai*
 The answer is coherent, however, incorrect
+
 b) *Input: Paaiškink žodį asido tekste: Apsidolbinę asido
-Output: apsidolbinę - apsvaigti nuo narkotikų
-The explanation is correct, however, does not explain the word it's asked to*
-c) * Input: Paaiškink žodį Sniegas tekste: Šiandien užvežė sniego
+Output: apsidolbinę - apsvaigti nuo narkotikų*
+The explanation is correct, however, does not explain the word it's asked to
+
+c) *Input: Paaiškink žodį Sniegas tekste: Šiandien užvežė sniego
 Output: Sniegas - susišvirkštas papildomų narkotikų suukų abstinencijos sindromo developavimas utyrimui*
 The output doesn't make sense
 - **The dataset size was insufficient, however, increasing it is challenging.** For each word, only one example of use was provided. For proper performance, it should be increased, however, it is hard to automate this, and doing manual annotations is time consuming.
